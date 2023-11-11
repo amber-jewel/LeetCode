@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author amber
+ *
+ *
+ */
+module test {
+}

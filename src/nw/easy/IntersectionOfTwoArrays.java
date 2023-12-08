@@ -24,8 +24,8 @@ public class IntersectionOfTwoArrays {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums1 = { 4,9,5 };
-		int[] nums2 = { 9,4,9,8,4 };
+		int[] nums1 = { 4, 9, 5 };
+		int[] nums2 = { 9, 4, 9, 8, 4 };
 		int[] temp = intersection(nums1, nums2);
 		for (int t : temp) {
 			System.out.print(t + " ");
@@ -36,23 +36,18 @@ public class IntersectionOfTwoArrays {
 		Set<Integer> res1 = new HashSet<Integer>();
 		Set<Integer> res2 = new HashSet<Integer>();
 		/*
-		 // correct, but wrong logic
-		for (int i = 0; i < nums1.length; i++) {
-			for (int j = 0; j < nums2.length; j++) {
-				if (nums1[i] == nums2[j]) {
-					res1.add(nums1[i]);
-				}
+		 * // correct, but wrong logic for (int i = 0; i < nums1.length; i++) { for (int
+		 * j = 0; j < nums2.length; j++) { if (nums1[i] == nums2[j]) {
+		 * res1.add(nums1[i]); } } }
+		 */
+		for (int i : nums1) {
+			res1.add(i);
+		}
+		for (int j : nums2) {
+			if (res1.contains(j)) {
+				res2.add(j);
 			}
 		}
-		*/
-		for (int i : nums1) {
-            res1.add(i);
-        }
-        for (int j : nums2) {
-            if (res1.contains(j)) {
-                res2.add(j);
-            }
-        }
 		int[] get = new int[res2.size()];
 		int i = 0;
 		for (int t : res2) {
